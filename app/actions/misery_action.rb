@@ -6,8 +6,7 @@ class MiseryAction < Cramp::Action
   self.transport = :sse
   
   def create_redis
-    redis_details =  YAML.load_file( ZooniverseLive::Application.root('config/redis.yml'))
-    @sub = EM::Hiredis.connect("redis://:#{redis_details['password']}@#{redis_details["host"]}:#{redis_details["port"]}/#{redis_details["db"]}")
+    @sub = EM::Hiredis.connect("redis://redistogo:b616b0fd23a137abbc54c213f4fc80c0@tetra.redistogo.com:9420/")
     subscribe
   end
   
@@ -19,7 +18,7 @@ class MiseryAction < Cramp::Action
     @user_count ||=0
     @user_count +=1
     puts "user joined"
-    render encode_json(:action=>"hello",:message=>"How you doin")
+    render "hi"
   end
   
   
@@ -31,6 +30,7 @@ class MiseryAction < Cramp::Action
   end
   
   def push_out(message)
+    puts message
     render message
   end
   

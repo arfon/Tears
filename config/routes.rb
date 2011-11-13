@@ -10,8 +10,6 @@ Rack::Builder.new do
  end
   run Rack::Cascade.new([file_server, routes])
   
-  
-  
 end
 
 
