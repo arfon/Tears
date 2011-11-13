@@ -25,7 +25,9 @@ class MiseryAction < Cramp::Action
   private
 
   def subscribe
-    @sub.subscribe('tears')
+    # tears = Science!
+    # tears2 = sadness bowl
+    @sub.subscribe('tears2')
     @sub.on(:message) {|channel, message| push_out(message) }    
   end
   
