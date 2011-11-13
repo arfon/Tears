@@ -18,7 +18,7 @@ class MiseryAction < Cramp::Action
     @user_count ||=0
     @user_count +=1
     puts "user joined"
-    render "hi"
+    
   end
   
   

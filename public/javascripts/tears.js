@@ -12,3 +12,18 @@ function setUpMap(){
        };
     var map = new google.maps.Map(document.getElementById("map"), myOptions);
 }
+
+function setUpSSE(){
+    var host = window.location.host.split(':')[0];
+	var source = new EventSource('/misery');
+
+	source.addEventListener('message', function(e) {
+	    console.log(e.data);
+		var obj = $.evalJSON(e.data);
+		if (obj.action=="new_classification"){
+				var classification = (obj.message);
+        	console.log(classification);
+					addSplash(classification, get_color(classification.application_identifier),20000);
+			}
+		}, false);
+}
