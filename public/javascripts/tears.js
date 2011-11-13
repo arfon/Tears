@@ -8,11 +8,12 @@ $(document).ready(function(){
 });
 
 function setUpMap(){
-	var latlng = new google.maps.LatLng(0, 0);
+	var latlng = new google.maps.LatLng(40, 0);
 	   var myOptions = {
 	     zoom: 2,
 	     center: latlng,
-	     mapTypeId: google.maps.MapTypeId.ROADMAP
+	     mapTypeId: google.maps.MapTypeId.ROADMAP,
+       disableDefaultUI: true
 	   };
 	map = new google.maps.Map(document.getElementById("map"), myOptions);
 	geocoder = new google.maps.Geocoder();
@@ -25,10 +26,17 @@ function setUpSSE(){
 	source.addEventListener('message', function(e) {
 	    
 		var obj = $.evalJSON(e.data);
+      if(obj.user.location){
+        
         // if(obj.user.geo){
          // console.log("geocoding "+obj.user.location );
-         console.log(obj);
-         $("#tweets").prepend($("<li class='tweet'></li>").html(obj.text));
+         var color = "green";
+         if (obj.sentiment == "neg"){
+           var color = "red";
+         };
+
+         $("#tweets").prepend($("<li class='tweet'></li>").addClass(color).html(obj.text));
+
          geocoder.geocode( { 'address': obj.user.location}, function(results, status) {
             console.log(results);
             if(obj.sentiment == "neg"){
@@ -39,6 +47,7 @@ function setUpSSE(){
             };
               
 	     });
+     }
 		}, false);
 }
 

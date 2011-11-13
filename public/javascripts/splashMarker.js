@@ -33,8 +33,8 @@ SplashMarker.prototype.draw = function() {
   if (!pixPosition) return;
 
   // this.div_.style.width = this.width_ + "px";
-  $(this.div_).css("left", pixPosition.x );
-  $(this.div_).css("top", pixPosition.y);
+  $(this.div_).css("left", pixPosition.x-8 );
+  $(this.div_).css("top", pixPosition.y-8);
  
 };
 
@@ -42,14 +42,19 @@ SplashMarker.prototype.createElement = function() {
   var panes = this.getPanes();
   var this_ = this;
   var div = this.div_;
-  // console.log(this.colour);
+  if (this.color == "green"){
+    var color = "#0cff00"
+  } else{
+    var color = "red"
+  };
+
   if (!div) {
     div = $("<div class='SplashMarker'></div>");
     $(div).css({
-        "background-color":this.color,
-        "width":"10px",
-        "height":"10px",
-        "border-radius":"5",
+        "background-color": color,
+        "width":"15px",
+        "height":"15px",
+        "border-radius": "10px",
         "position":"absolute"
       })
     $(div).animate(

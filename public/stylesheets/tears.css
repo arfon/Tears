@@ -68,20 +68,29 @@ background-color: #000000 ;
 
 #tweets{
     width:500px;
-    max-height:400px;
+    max-height:200px;
     list-style:none;
     overflow-y:scroll;
     z-index: 1000;
     position: absolute;
     right: 10px;
-    top: 70px;
+    bottom: 0px;
 }
 
 .tweet{
-    border:1px solid black;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-    background-color:white;
+    font-size: 14px;
+    border:1px solid gray;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color:#efefef;
     padding:5px;
     margin-bottom:5px;
+}
+
+.red{
+    border:3px solid red;
+}
+
+.green{
+    border:3px solid #0cff00;
 }
