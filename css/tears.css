@@ -1,0 +1,24 @@
+html, body {
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 18px;
+  background: rgb(124, 98, 183);
+}
+
+header {
+}
+
+section {
+}
+
+footer {
+}
+
+.container {
+	margin: 0 auto;
+	width: 960px;
+}
