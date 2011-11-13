@@ -42,10 +42,11 @@ SplashMarker.prototype.createElement = function() {
   var panes = this.getPanes();
   var this_ = this;
   var div = this.div_;
+  // console.log(this.colour);
   if (!div) {
     div = $("<div class='SplashMarker'></div>");
     $(div).css({
-        "background-color":'red',
+        "background-color":this.color,
         "width":"10px",
         "height":"10px",
         "border-radius":"5",

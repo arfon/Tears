@@ -2,6 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     activesupport (3.0.10)
+    addressable (2.2.6)
     async-rack (0.5.1)
       rack (~> 1.1)
     cramp (0.15.1)
@@ -12,8 +13,16 @@ GEM
     daemons (1.1.4)
     em-hiredis (0.1.0)
       hiredis (~> 0.3.0)
+    em-http-request (1.0.0)
+      addressable (>= 2.2.3)
+      em-socksify
+      eventmachine (>= 1.0.0.beta.3)
+      http_parser.rb (>= 0.5.2)
+    em-socksify (0.1.0)
+      eventmachine
     eventmachine (1.0.0.beta.4)
     hiredis (0.3.2)
+    http_parser.rb (0.5.3)
     http_router (0.10.2)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
@@ -34,6 +43,7 @@ DEPENDENCIES
   async-rack
   cramp
   em-hiredis
+  em-http-request
   http_router
   json_pure
   thin

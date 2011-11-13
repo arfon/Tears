@@ -7,6 +7,7 @@ gem 'thin'
 
 gem 'em-hiredis' 
 gem 'json_pure'
+gem 'em-http-request'
 
 # Rack based routing
 gem 'http_router'

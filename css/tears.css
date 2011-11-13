@@ -6,28 +6,17 @@ body {
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
-  background: url('../images/bg.png') rgb(124, 98, 183) repeat;
+  background: white;
   color: rgb(255, 255, 255);
 }
 
-header {
-	padding: 40px 0;
-	text-align: center;
-}
-
-section {
-}
-
-footer {
-}
-
-.container {
-	margin: 0 auto;
-	width: 960px;
+#map{
+	width:100px;
+	height: 100px;
 }
 
 #bucket {
-    background: rgba( 0, 0, 0, 0.20);
+/*    background: rgba( 0, 0, 0, 0.20);*/
     margin-left:auto;
     margin-right:auto;
     width: 150px;
