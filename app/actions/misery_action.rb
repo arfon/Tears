@@ -6,7 +6,7 @@ class MiseryAction < Cramp::Action
   self.transport = :sse
   
   def create_redis
-    @sub = EM::Hiredis.connect("redis://redistogo:b616b0fd23a137abbc54c213f4fc80c0@tetra.redistogo.com:9420/")
+    @sub = EM::Hiredis.connect("redis://redis.bucketsoftears.com:6379/")
     subscribe
   end
   
