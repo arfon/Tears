@@ -19,11 +19,8 @@ function setUpSSE(){
 
 	source.addEventListener('message', function(e) {
 	    console.log(e.data);
+	    console.log(typeof e.data)
 		var obj = $.evalJSON(e.data);
-		if (obj.action=="new_classification"){
-				var classification = (obj.message);
-        	console.log(classification);
-					addSplash(classification, get_color(classification.application_identifier),20000);
-			}
+	
 		}, false);
 }
