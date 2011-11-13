@@ -6,7 +6,7 @@ class MiseryAction < Cramp::Action
   self.transport = :sse
   
   def create_redis
-    @sub = EM::Hiredis.connect("redis://redis.bucketsoftears.com:6379/")
+    @sub = EM::Hiredis.connect("redis://redis.bucketsoftears.com:6379/1")
     subscribe
   end
   
@@ -25,7 +25,7 @@ class MiseryAction < Cramp::Action
   private
 
   def subscribe
-    @sub.subscribe('tears')
+    @sub.subscribe('tears2')
     @sub.on(:message) {|channel, message| push_out(message) }    
   end
   

@@ -35,8 +35,12 @@ SplashMarker.prototype.draw = function() {
   // this.div_.style.width = this.width_ + "px";
   $(this.div_).css("left", pixPosition.x );
   $(this.div_).css("top", pixPosition.y);
- 
+  $(this.div_).animate(
+                {opacity:0,"top":"500px"},this.fadeDuration, function(){  $(this).remove(); }
+              );
 };
+
+
 
 SplashMarker.prototype.createElement = function() {
   var panes = this.getPanes();
@@ -51,9 +55,7 @@ SplashMarker.prototype.createElement = function() {
         "position":"absolute",
         "background-image": "url('images/tear.png')",
       })
-    $(div).animate(
-                  {opacity:0},this.fadeDuration, function(){  $(this).remove(); }
-                );
+
                
   } 
   this.div_=div;
