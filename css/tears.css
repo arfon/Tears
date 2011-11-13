@@ -88,3 +88,17 @@ footer {
     -o-transition: all 3s ease-out;
     transition: all 3s ease-out;
 }
+
+#tweets{
+    width:500px;
+    max-height:400px;
+    list-style:none;
+    overflow-y:scroll;
+}
+
+.tweet{
+    border:1px solid black;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background-color:white;
+}

@@ -8,7 +8,7 @@ $(document).ready(function(){
 });
 
 function setUpMap(){
-    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var latlng = new google.maps.LatLng(20, 0);
        var myOptions = {
          zoom: 2,
          center: latlng,
@@ -27,6 +27,7 @@ function setUpSSE(){
 		var obj = $.evalJSON(e.data);
         // if(obj.user.geo){
          console.log("geocoding "+obj.user.location );
+         $("#tweets").prepend($("<li class='tweet'></li>").html(obj.text));
          geocoder.geocode( { 'address': obj.user.location}, function(results, status) {
             console.log(results);
             var marker = new SplashMarker(results[0].geometry.location, "red", 20000, map);
