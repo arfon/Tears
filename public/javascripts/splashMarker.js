@@ -5,7 +5,7 @@ function SplashMarker(latlng,color,fade,map) {
   this.latlng_ = latlng;
   this.map_ = map;
   this.fadeDuration = fade;
-  this.color =color;
+  this.color = color;
  
 
   var me = this;
@@ -45,11 +45,11 @@ SplashMarker.prototype.createElement = function() {
   if (!div) {
     div = $("<div class='SplashMarker'></div>");
     $(div).css({
-        "background-color":'red',
-        "width":"10px",
-        "height":"10px",
+        "width":"25px",
+        "height":"25px",
         "border-radius":"5",
-        "position":"absolute"
+        "position":"absolute",
+        "background-image": "url('images/tear.png')",
       })
     $(div).animate(
                   {opacity:0},this.fadeDuration, function(){  $(this).remove(); }
