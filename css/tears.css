@@ -1,12 +1,6 @@
 html, body {
 }
 
-h1.masthead {
-    text-align: center;
-    font-size: 3em;
-    font-family: 'Bitter', serif;
-}
-
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -19,6 +13,8 @@ body {
 header {
 	padding: 40px 0;
 	text-align: center;
+    font-size: 3em;
+    font-family: 'Bitter', serif;
 }
 
 section {
