@@ -7,6 +7,7 @@ gem 'thin'
 
 gem 'em-hiredis' 
 gem 'json_pure'
+gem 'twitter-stream'
 
 # Rack based routing
 gem 'http_router'

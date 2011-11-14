@@ -3,9 +3,14 @@ var geocoder;
 
 $(document).ready(function(){
     setUpMap();
-    
-    setUpSSE();
+    $("#search").submit(function(e){
+       e.preventDefault();
+       setUpSSE( $("#search_text").val());
+    });
+    // setUpSSE();
 });
+
+
 
 function setUpMap(){
     var latlng = new google.maps.LatLng(20, 0);
@@ -18,9 +23,10 @@ function setUpMap(){
     geocoder = new google.maps.Geocoder();
 }
 
-function setUpSSE(){
+function setUpSSE(term){
+    console.log("search term is "+term);
     var host = window.location.host.split(':')[0];
-	var source = new EventSource('/misery');
+	var source = new EventSource('/direct?term='+term);
 
 	source.addEventListener('message', function(e) {
 	    

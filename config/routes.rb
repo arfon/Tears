@@ -7,6 +7,8 @@ Rack::Builder.new do
  routes = HttpRouter.new do
    add('/').to(HomeAction)
    add('/misery').to(MiseryAction)
+   add('/direct').to(DirectAction)
+   
  end
   run Rack::Cascade.new([file_server, routes])
   
