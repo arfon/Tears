@@ -4,12 +4,12 @@ class MiseryAction < Cramp::Action
   on_finish :destroy_redis
 #  periodic_timer :check_activities, :every => 15
   self.transport = :sse
-  
+
   def create_redis
     @sub = EM::Hiredis.connect("redis://redis.bucketsoftears.com:6379/")
     subscribe
   end
-  
+
   def destroy_redis
     puts "lost user :-("
     @sub.close_connection_after_writing
@@ -18,22 +18,22 @@ class MiseryAction < Cramp::Action
     @user_count ||=0
     @user_count +=1
     puts "user joined"
-    
+
   end
-  
-  
+
+
   private
 
   def subscribe
     # tears = Science!
     # tears2 = sadness bowl
     @sub.subscribe('tears2')
-    @sub.on(:message) {|channel, message| push_out(message) }    
+    @sub.on(:message) {|channel, message| push_out(message) }
   end
-  
+
   def push_out(message)
     puts message
     render message
   end
-  
+
 end

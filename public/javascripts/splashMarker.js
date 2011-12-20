@@ -6,11 +6,11 @@ function SplashMarker(latlng,color,fade,map) {
   this.map_ = map;
   this.fadeDuration = fade;
   this.color = color;
- 
+
 
   var me = this;
   this.setMap(this.map_);
-  
+
 }
 
 SplashMarker.prototype = new google.maps.OverlayView();
@@ -29,13 +29,13 @@ SplashMarker.prototype.draw = function() {
 
   this.createElement()
   var pixPosition = this.getProjection().fromLatLngToDivPixel(this.latlng_);
-  
+
   if (!pixPosition) return;
 
   // this.div_.style.width = this.width_ + "px";
   $(this.div_).css("left", pixPosition.x );
   $(this.div_).css("top", pixPosition.y);
- 
+
 };
 
 SplashMarker.prototype.createElement = function() {
@@ -54,8 +54,8 @@ SplashMarker.prototype.createElement = function() {
     $(div).animate(
                   {opacity:0},this.fadeDuration, function(){  $(this).remove(); }
                 );
-               
-  } 
+
+  }
   this.div_=div;
   $(panes.overlayLayer).append(this.div_);
 }

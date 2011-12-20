@@ -23,8 +23,8 @@ def join_redis
 end
 
 EventMachine.run do
-  
-    http = EM::HttpRequest.new(url, :ssl=>true).get 
+
+    http = EM::HttpRequest.new(url, :ssl=>true).get
   # buffer = ""
   #  puts url
   #  conn = EM::Protocols::HttpClient2.connect(:host => host,
@@ -32,7 +32,7 @@ EventMachine.run do
   #     :request => request,
   #     :query_string => query,
   #     :ssl=>true)
-  # 
+  #
   #  req = conn.get('/')
   #  req.callback{ |response|
   #    puts 'responce is #{response.to_json}'
