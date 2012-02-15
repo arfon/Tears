@@ -3,10 +3,10 @@ var geocoder;
 
 $(document).ready(function(){
     setUpMap();
-    $("#search").submit(function(e){
-       e.preventDefault();
-       setUpSSE( $("#search_text").val());
-    });
+    // $("#search").submit(function(e){
+    //    e.preventDefault();
+       setUpSSE( "crying");
+    // });
     // setUpSSE();
 });
 
