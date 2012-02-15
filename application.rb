@@ -26,7 +26,6 @@ end
 require 'erb'
 
 Bundler.require(:default, Tears::Application.env)
-require 'erb'
 
 # Preload application classes
 Dir['./app/**/*.rb'].each {|f| require f}

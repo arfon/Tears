@@ -10,7 +10,11 @@ $(document).ready(function(){
     // setUpSSE();
 });
 
-
+function getSemantic(term){
+    $.post("http://text-processing.com/api/sentiment/callback=?", term,function(reply){
+        console.log(reply);
+    });
+}
 
 function setUpMap(){
     var latlng = new google.maps.LatLng(20, 0);
