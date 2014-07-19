@@ -5,7 +5,7 @@ gem 'cramp'
 # Async webserver for running a cramp application
 gem 'thin'
 
-gem 'em-hiredis' 
+gem 'em-hiredis'
 gem 'json_pure'
 
 # Rack based routing

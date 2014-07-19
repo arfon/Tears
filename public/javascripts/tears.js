@@ -3,7 +3,7 @@ var geocoder;
 
 $(document).ready(function(){
     setUpMap();
-    
+
     setUpSSE();
 });
 
@@ -23,7 +23,7 @@ function setUpSSE(){
 	var source = new EventSource('/misery');
 
 	source.addEventListener('message', function(e) {
-	    
+
 		var obj = $.evalJSON(e.data);
         // if(obj.user.geo){
          console.log("geocoding "+obj.user.location );
